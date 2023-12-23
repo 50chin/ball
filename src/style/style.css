@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+}
+
+.container {
+  box-sizing: content-box;
+}
+
+.ball {
+  position: relative;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  background: lightgreen;
+  border-radius: 50%;
+  cursor: crosshair;
+  position: absolute;
+}
+
+.text_block {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.text {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  padding-right: 10px;
+}
+
+.btn_reset {
+  color: red;
+  cursor: pointer;
+  width: 100px;
+  display: none;
+}
