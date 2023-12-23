@@ -3,10 +3,8 @@ const textTime = document.querySelector('.text');
 const btnReset = document.querySelector('.btn_reset');
 // функция рэндом перемещения мячика
 function randomPlace() {
-  btnNode.style.left = Math.round(Math.random() * 85) + 'dvw';
+  btnNode.style.left = Math.round(Math.random() * 80) + 'dvw';
   btnNode.style.top = Math.round(Math.random() * 95) + 'dvh';
-  btnNode.style.right = Math.round(Math.random() * 95) + 'dvw';
-  btnNode.style.bottom = Math.round(Math.random() * 95) + 'dvh';
 }
 let arrTime = [];
 let middleTime = [];
@@ -20,7 +18,6 @@ function getTime() {
   }
   const midTime =
     middleTime.reduce((acc, el) => acc + el, 0) / middleTime.length;
-  console.log(midTime);
   createCard(timeClick, midTime);
 }
 // функция записи времени в тег P
@@ -38,19 +35,12 @@ function createCard(timeClick, midTime) {
     card.textContent = '0 ms';
   }
   btnReset.style.display = 'block';
-  btnReset.addEventListener('click', () => {
-    resetTime();
-    textTime.textContent = '';
-    randomPlace();
-    btnReset.style.display = 'none';
-  });
   renderCard(card);
 }
 // фнукция апенда в тег Див класс text
 function renderCard(card) {
   textTime.append(card);
 }
-
 // функция ресета времени тег P
 function resetTime() {
   arrTime = [];
@@ -61,4 +51,11 @@ function resetTime() {
 btnNode.addEventListener('click', () => {
   randomPlace();
   getTime();
+});
+
+btnReset.addEventListener('click', () => {
+  resetTime();
+  textTime.textContent = '';
+  randomPlace();
+  btnReset.style.display = 'none';
 });

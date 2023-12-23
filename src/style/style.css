@@ -6,10 +6,17 @@
 
 body {
   background: black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .container {
   box-sizing: content-box;
+}
+
+main {
+  flex: 1 1 auto;
 }
 
 .ball {
@@ -25,22 +32,26 @@ body {
   position: absolute;
 }
 
-.text_block {
+footer {
+  position: absolute;
+  padding-bottom: 10px;
+  bottom: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: end;
 }
 
 .text {
+  padding-right: 10px;
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
-  padding-right: 10px;
 }
 
 .btn_reset {
   color: red;
   cursor: pointer;
-  width: 100px;
+  width: 80px;
   display: none;
 }
